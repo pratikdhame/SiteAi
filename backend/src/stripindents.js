@@ -1,21 +1,26 @@
-export function stripIndents(value) {
-  if (typeof value !== 'string') {
-    const processedString = value.reduce((acc, curr, i) => {
-      acc += curr + (arguments[i + 1] ?? '');
-      return acc;
-    }, '');
-
-    return _stripIndents(processedString);
-  }
-
-  return _stripIndents(value);
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.stripIndents = stripIndents;
+function stripIndents(arg0) {
+    var values = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        values[_i - 1] = arguments[_i];
+    }
+    if (typeof arg0 !== 'string') {
+        var processedString = arg0.reduce(function (acc, curr, i) {
+            var _a;
+            acc += curr + ((_a = values[i]) !== null && _a !== void 0 ? _a : '');
+            return acc;
+        }, '');
+        return _stripIndents(processedString);
+    }
+    return _stripIndents(arg0);
 }
-
 function _stripIndents(value) {
-  return value
-    .split('\n')
-    .map((line) => line.trim())
-    .join('\n')
-    .trimStart()
-    .replace(/[\r\n]$/, '');
+    return value
+        .split('\n')
+        .map(function (line) { return line.trim(); })
+        .join('\n')
+        .trimStart()
+        .replace(/[\r\n]$/, '');
 }

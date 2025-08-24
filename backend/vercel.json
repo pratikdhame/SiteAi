@@ -2,18 +2,19 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/**/*.js",
+      "src": "src/index.ts",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/template",
-      "dest": "/api/template"
-    },
-    {
-      "src": "/chat",
-      "dest": "/api/chat"
+      "src": "/(.*)",
+      "dest": "src/index.ts"
     }
-  ]
+  ],
+  "functions": {
+    "src/index.ts": {
+      "maxDuration": 30
+    }
+  }
 }

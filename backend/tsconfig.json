@@ -1,0 +1,40 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // File Layout
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    // Environment Settings - Modified for Vercel
+    "module": "CommonJS",  // Changed from "nodenext" for better Vercel compatibility
+    "target": "ES2020",    // Changed from "esnext" for Node 18 compatibility
+    "types": ["node"],
+    "lib": ["ES2020"],     // Added explicit lib for consistency
+
+    // Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Recommended Options
+    "strict": true,
+    // "jsx": "react-jsx",  // Commented out as this is backend
+    "verbatimModuleSyntax": false,  // Changed to false for better compatibility
+    "isolatedModules": true,
+    // "noUncheckedSideEffectImports": true,  // May cause issues, commenting out
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+    
+    // Additional settings for better compatibility
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

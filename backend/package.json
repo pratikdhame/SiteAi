@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vercel dev",
-    "deploy": "vercel --prod"
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "vercel-build": "tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "@types/cors": "^2.8.19",
@@ -22,7 +23,6 @@
     "typescript": "^5.9.2"
   },
   "devDependencies": {
-    "@types/node": "^24.3.0",
-    "vercel": "latest"
+    "@types/node": "^24.3.0"
   }
 }
