@@ -51,4 +51,4 @@ export const allowedHTMLElements = [
     'tr',
     'ul',
     'var',
-  ];
+];
